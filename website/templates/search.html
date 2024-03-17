@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Search {% endblock %}
+
+{% block content %}
+
+{% if items | length < 1 %}
+<h3>No Items Match your Search</h3>
+{% else %}
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    {% for item in items %}
+    <div style="border: 1px solid #ccc; margin-bottom: 10px; display: flex;">
+        <img class="displayimg" src="{{ item.product_picture }}" alt="">
+        <div style="padding: 10px; display: flex; flex-direction: column;">
+            <h6 style="color: gray;">{{ item.product_name }}</h6>
+            <div class="col" style="display: flex; align-items: center;">
+                <div style="flex-grow: 1; text-align: right;">
+                    <h5 style="margin-bottom: 5px;">Ksh {{ item.current_price }}</h5>
+                    <strike><p style="margin-bottom: 5px;">Ksh {{ item.previous_price }}</p></strike>
+                </div>
+                <a href="/add-to-cart/{{ item.id }}" style="margin-left: 10px;">Add</a>
+            </div>
+            <div>
+                <p>{{ item.in_stock }} items left</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endif %}
+
+{% endblock %}

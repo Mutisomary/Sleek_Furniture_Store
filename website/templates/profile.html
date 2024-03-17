@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block content %}
+<div>
+    <h3>Profile</h3>
+    <div>
+        <h3>{{ customer.username }}</h3>
+        <p>Email: {{ customer.email }}</p>
+        <p><a href="/change-password/{{ customer.id }}">Change password</a></p>
+    </div>    
+</div>
+{% endblock %}
