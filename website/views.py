@@ -14,15 +14,19 @@ API_PUBLISHABLE_KEY = 'ISPubKey_test_c133d697-3e02-46ce-b56c-31a45d9d74cf'
 API_TOKEN = 'ISSecretKey_test_4283324b-78a2-4db0-b8ad-67807a8cd387'
 
 
-@views.route('/home')
-def hhome(): 
-    return render_template('hhhhome.html')
-
 @views.route('/')
-def home():
+def home(): 
     items = Product.query.filter_by(flash_sale=True)
 
     return render_template('home.html', items = items, cart=Cart.query.filter_by(customer_link=current_user.id).all()
+                           if current_user.is_authenticated else [])
+ 
+
+@views.route('/all_products')
+def products():
+    items = Product.query.all()
+
+    return render_template('allproducts.html', items = items, cart=Cart.query.filter_by(customer_link=current_user.id).all()
                            if current_user.is_authenticated else [])
 
 @views.route('/add-to-cart/<int:item_id>')

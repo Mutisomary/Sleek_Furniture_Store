@@ -38,8 +38,8 @@ class Product(db.Model):
     flash_sale = db.Column(db.Boolean, default=False)
     date_added = db.Column(db.DateTime(), default=datetime.utcnow)
 
-    carts = db.relationship('Cart', backref=db.backref('product', lazy=True))
-    orders = db.relationship('Order', backref=db.backref('product', lazy=True))
+    carts = db.relationship('Cart', backref='product', cascade='all, delete-orphan')
+    orders = db.relationship('Order', backref='product', cascade='all, delete-orphan')
     
 
     def __str__(self):
