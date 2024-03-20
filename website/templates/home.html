@@ -39,8 +39,8 @@
                 <h6 style="color: gray;">{{ item.product_name }}</h6>
                 <div class="col" style="display: flex; align-items: center;">
                     <div style="flex-grow: 1; text-align: right;">
-                        <h5 style="margin-bottom: 5px;">Ksh {{ item.current_price }}</h5>
-                        <strike><p style="margin-bottom: 5px;">Ksh {{ item.previous_price }}</p></strike>
+                        <h5 style="margin-bottom: 5px;">$ {{ item.current_price }}</h5>
+                        <strike><p style="margin-bottom: 5px;">$ {{ item.previous_price }}</p></strike>
                     </div>
                     <a href="/add-to-cart/{{ item.id }}" style="margin-left: 10px;">Add to cart</a>
                 </div>
@@ -64,4 +64,17 @@
             <button>Shop Now</button>
         </div> 
     </div>
+    <footer>
+        <p style="font-size: 20px;"><strong>Sleek Furniture Store</strong></p>
+        <div>
+            <a href="https://twitter.com/MaryMutso"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://github.com/Mutisomary"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mary-mutiso-softwaredeveloper/"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div>
+            <i class="fa-regular fa-copyright"></i>
+            Copyright; 2024 <strong style="font-size: 18px;">Sleek Furniture Store</strong>. All Rights Reserved.
+            
+        </div>
+    </footer>
 {% endblock %}

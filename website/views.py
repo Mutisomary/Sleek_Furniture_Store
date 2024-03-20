@@ -66,7 +66,8 @@ def show_cart():
     cart = Cart.query.filter_by(customer_link=current_user.id).all()
     amount = 0
     for item in cart:
-        amount += item.product.current_price * item.quantity
+        if item.product is not None:  # Check if product is not None
+            amount += item.product.current_price * item.quantity
 
     return render_template('cart.html', cart=cart, amount=amount, total=amount+200)
 
@@ -90,7 +91,7 @@ def plus_cart():
         data = {
             'quantity': cart_item.quantity,
             'amount': amount,
-            'total': amount + 200
+            'total': amount + 1000
         }
 
         return jsonify(data)
@@ -115,7 +116,7 @@ def minus_cart():
         data = {
             'quantity': cart_item.quantity,
             'amount': amount,
-            'total': amount + 200
+            'total': amount + 1000
         }
 
         return jsonify(data)
@@ -139,7 +140,7 @@ def remove_cart():
         data = {
             'quantity': cart_item.quantity,
             'amount': amount,
-            'total': amount + 200
+            'total': amount + 15
         }
 
         return jsonify(data)
@@ -156,7 +157,7 @@ def place_order():
 
             service = APIService(token=API_TOKEN, publishable_key=API_PUBLISHABLE_KEY, test=True)
             create_order_response = service.collect.mpesa_stk_push(phone_number='254792566007', email=current_user.email,
-                                                                   amount=total + 200, narrative='Purchase of goods')
+                                                                   amount=total + 15, narrative='Purchase of goods')
 
             for item in customer_cart:
                 new_order = Order()

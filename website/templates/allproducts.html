@@ -11,7 +11,7 @@
             <div class="col" style="display: flex; align-items: center;">
                 <div style="flex-grow: 1; text-align: right;">
                     <h5 style="margin-bottom: 5px;">Ksh {{ item.current_price }}</h5>
-                    <strike><p style="margin-bottom: 5px;">Ksh {{ item.previous_price }}</p></strike>
+                    <strike><p style="margin-bottom: 5px;">$ {{ item.previous_price }}</p></strike>
                 </div>
                 <a href="/add-to-cart/{{ item.id }}" style="margin-left: 10px;">Add to cart</a>
             </div>
