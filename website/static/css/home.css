@@ -1,0 +1,207 @@
+.homepage {
+    background-color: #f0f0f0;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Adjust alignment as needed */
+    margin: 0 auto; /* Center the container */
+    max-width: 1200px; /* Set maximum width */
+    flex-wrap: wrap;
+}
+
+.service {
+    width: calc(50% - 20px); /* Adjust width based on desired spacing */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid orangered;
+}
+
+.service img {
+    max-width: 100%;
+    width: 700px;
+    height: 300px; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensure images maintain aspect ratio */
+}
+.service button, .homepage button, .text-container button, .shopmore {
+    padding: 12px 25px;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-color: orangered;
+}
+.service p {
+    font-size: 17px;
+}
+.service button:hover,
+.homepage button:hover,
+.text-container button:hover, 
+.shopmore:hover {
+    background-color: orangered;
+    color: white; 
+}
+
+.aboutclass {
+    display: flex;
+    margin-left: 150px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.image-container {
+    width: 700px; /* Set width of image container */
+    height: 300px; /* Set height of image container */
+}
+
+.image-container img {
+    width: 650px; /* Make image fill its container */
+    height: 300px; /* Make image fill its container */
+    object-fit: cover; /* Maintain aspect ratio without stretching */
+}
+
+.text-container {
+    flex: 1; /* Let text container take remaining space */
+    margin-left: 20px; /* Add space between image and text */
+}
+.text-container p {
+    font-size: 17px;
+}
+
+.homediv-container {
+    background-color: #fff;
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.home-products {
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 10px;
+    align-items: center;
+    border: 1px solid orangered;
+}
+
+.product {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    width: 300px;
+    align-items: center;
+}
+
+.product img {
+    max-width: 100%;
+    width: 100%;
+    height: 200px;
+}
+
+
+.product-details {
+    flex: 1;
+}
+.product-details h3 {
+    font-size: 28px;
+}
+
+
+.price {
+    display: flex;
+    align-items: center;
+}
+
+.price h5 {
+    margin-right: 20px;
+    font-size: 23px;
+}
+.price strike {
+    font-size: 14px;
+    color: red;
+}
+
+
+.actions a {
+    text-decoration: none;
+}
+
+.actions button {
+    color: #fff;
+    background-color: orangered;
+    padding: 10px 20px;
+    font-size: 17px;
+    border: none;
+    border-radius: 20px;
+}
+.actions button:hover {
+    background-color: rgb(223, 105, 62);
+}
+.actions button a {
+    color: #fff;
+}
+
+
+
+.shopmore{
+    display: block;
+    margin: 25px auto 50px;
+    background-color: #fff;
+}
+
+.pagination {
+    display: flex;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .pagination a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .pagination a.current-page {
+    background-color: orangered;
+    color: white;
+  }
+
+  /* search css */
+  .search-form {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    width: 400px;
+  }
+  
+  .search-form input[type="search"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+  }
+  
+  .search-form button {
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: 1px solid orangered;
+    cursor: pointer;
+  }
+  
+  .search-form button:hover {
+    background-color: orangered;
+    color: white;
+  }

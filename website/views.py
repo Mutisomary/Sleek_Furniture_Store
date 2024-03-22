@@ -24,10 +24,19 @@ def home():
 
 @views.route('/all_products')
 def products():
-    items = Product.query.all()
+    page = request.args.get('page', 1, type=int)
+    per_page = 8
+    items = Product.query.paginate(page=page, per_page=per_page)
 
-    return render_template('allproducts.html', items = items, cart=Cart.query.filter_by(customer_link=current_user.id).all()
-                           if current_user.is_authenticated else [])
+    cart_items = Cart.query.filter_by(customer_link=current_user.id).all() if current_user.is_authenticated else []
+
+    return render_template('allproducts.html', items=items, cart=cart_items)
+
+@views.route("/post/<int:item_id>")
+@login_required
+def product(item_id):
+    item = Product.query.get(item_id)
+    return render_template('product.html', item=item)
 
 @views.route('/add-to-cart/<int:item_id>')
 @login_required

@@ -1,19 +1,13 @@
 {% extends 'base.html' %}
-
-{% block title %} Search {% endblock %}
-
+{% block title %} Product {% endblock %}
 {% block content %}
 
-{% if items | length < 1 %}
-<h3>No Items Match your Search</h3>
-{% else %}
 <div class="homediv-container">
-    {% for item in items %}
     <div class="home-products">
         <div class="product">
             <img class="displayimg" src="{{ item.product_picture }}" alt="">
             <div class="product-details">
-                <h3>{{ item.product_name }}</h6>
+                <h3>{{ item.product_name }}</h3> 
                 <div class="price">
                     <h5>$ {{ item.current_price }}</h5>
                     <strike><p>$ {{ item.previous_price }}</p></strike>
@@ -25,9 +19,5 @@
             </div>
         </div>
     </div>
-    {% endfor %}
 </div>
-{% endif %}
-
-
 {% endblock %}

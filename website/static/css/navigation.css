@@ -119,6 +119,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px;
+    margin-bottom: 20px;
 }
  .main {
     max-width: 90%;
@@ -153,78 +154,3 @@ footer {
 .progress-bar {
     height: 100%;
 }
-
-.homepage {
-    background-color: #f0f0f0;
-    height: 90vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-
-.services-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Adjust alignment as needed */
-    margin: 0 auto; /* Center the container */
-    max-width: 1200px; /* Set maximum width */
-}
-
-.service {
-    width: calc(50% - 20px); /* Adjust width based on desired spacing */
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    border: 1px solid orangered;
-}
-
-.service img {
-    max-width: 100%;
-    width: 700px;
-    height: 300px; /* Set a fixed height for the images */
-    object-fit: cover; /* Ensure images maintain aspect ratio */
-}
-.service button, .homepage button, .text-container button {
-    padding: 12px 25px;
-    font-size: 18px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-color: orangered;
-}
-.service p {
-    font-size: 17px;
-}
-.service button:hover,
-.homepage button:hover,
-.text-container button:hover {
-    background-color: orangered;
-    color: white; 
-}
-.aboutclass {
-    display: flex;
-    margin-left: 150px;
-    margin-right: 50px;;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.image-container {
-    width: 700px; /* Set width of image container */
-    height: 300px; /* Set height of image container */
-}
-
-.image-container img {
-    width: 650px; /* Make image fill its container */
-    height: 300px; /* Make image fill its container */
-    object-fit: cover; /* Maintain aspect ratio without stretching */
-}
-
-.text-container {
-    flex: 1; /* Let text container take remaining space */
-    margin-left: 20px; /* Add space between image and text */
-}
-.text-container p {
-    font-size: 17px;
-}
-

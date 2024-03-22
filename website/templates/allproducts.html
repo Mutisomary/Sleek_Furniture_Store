@@ -2,24 +2,43 @@
 {% block title %}All products {% endblock %}
 {% block content %}
 
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+<form class="search-form" role="search" action="/search" method="POST">
+    <input name="search" type="search" placeholder="Search..." aria-label="Search">
+    <button type="submit">Search</button>
+</form>
+
+<div class="homediv-container">
     {% for item in items %}
-    <div style="border: 1px solid #ccc; margin-bottom: 10px; display: flex;">
-        <img class="displayimg" src="{{ item.product_picture }}" alt="">
-        <div style="padding: 10px; display: flex; flex-direction: column;">
-            <h6 style="color: gray;">{{ item.product_name }}</h6>
-            <div class="col" style="display: flex; align-items: center;">
-                <div style="flex-grow: 1; text-align: right;">
-                    <h5 style="margin-bottom: 5px;">Ksh {{ item.current_price }}</h5>
-                    <strike><p style="margin-bottom: 5px;">$ {{ item.previous_price }}</p></strike>
+    <div class="home-products">
+        <div class="product">
+            <a href="{{ url_for('views.product', item_id=item.id) }}"><img class="displayimg" src="{{ item.product_picture }}" alt=""></a>
+            <div class="product-details">
+                <h3>{{ item.product_name }}</h6>
+                <div class="price">
+                    <h5>$ {{ item.current_price }}</h5>
+                    <strike><p>$ {{ item.previous_price }}</p></strike>
                 </div>
-                <a href="/add-to-cart/{{ item.id }}" style="margin-left: 10px;">Add to cart</a>
-            </div>
-            <div>
-                <p>{{ item.in_stock }} items left</p>
+                <div class="actions">
+                    <button><a href="/add-to-cart/{{ item.id }}">Add to cart</a></button>
+                    <p style="color: rgb(167, 57, 17); font-weight: 600; font-size: 18px;">{{ item.in_stock }} items left</p>
+                </div>
             </div>
         </div>
     </div>
+    {% endfor %}
+</div>
+
+<div class="pagination">
+    {% for page_num in items.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+        {% if page_num %}
+            {% if items.page == page_num %}
+                <a href="{{ url_for('views.products', page=page_num) }}" class="current-page">{{ page_num }}</a>
+            {% else %}
+                <a href="{{ url_for('views.products', page=page_num) }}">{{ page_num }}</a>
+            {% endif %}
+        {% else %}
+            <span class="ellipsis">...</span>
+        {% endif %}
     {% endfor %}
 </div>
 
