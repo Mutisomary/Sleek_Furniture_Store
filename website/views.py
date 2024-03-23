@@ -32,11 +32,14 @@ def products():
 
     return render_template('allproducts.html', items=items, cart=cart_items)
 
-@views.route("/post/<int:item_id>")
-@login_required
+@views.route('/product/<int:item_id>', methods=['GET'])
 def product(item_id):
+    # Retrieve the product based on the item_id
     item = Product.query.get(item_id)
-    return render_template('product.html', item=item)
+
+    # Render the template with the product details
+    return render_template('product.html', item=item, cart=Cart.query.filter_by(customer_link=current_user.id).all()
+                           if current_user.is_authenticated else [])
 
 @views.route('/add-to-cart/<int:item_id>')
 @login_required
