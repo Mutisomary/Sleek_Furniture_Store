@@ -5,12 +5,14 @@ Profile
 {% endblock %}
 
 {% block content %}
-<div>
-    <h3>Profile</h3>
-    <div>
+<div class="profile-container">
+    <div class="profile-header">
+        <h3>Profile</h3>
+    </div>
+    <div class="profile-info">
         <h3>{{ customer.username }}</h3>
         <p>Email: {{ customer.email }}</p>
-        <p><a href="/change-password/{{ customer.id }}">Change password</a></p>
-    </div>    
+        <a href="/change-password/{{ customer.id }}" class="change-password-button">Change password</a>
+    </div>
 </div>
 {% endblock %}

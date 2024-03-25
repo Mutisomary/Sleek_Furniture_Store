@@ -205,3 +205,100 @@
     background-color: orangered;
     color: white;
   }
+
+
+  /* User Authentification styles  */
+  .form-container {
+    width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-auth {
+    text-align: center;
+}
+
+.form-auth form {
+    text-align: left;
+}
+
+.form-auth input[type="text"],
+.form-auth input[type="email"],
+.form-auth input[type="password"],
+.form-auth input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-auth input[type="submit"] {
+    background-color: orangered;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 80px;
+    margin-right: 10px;
+}
+
+.form-auth input[type="submit"]:hover {
+    background-color: rgb(200, 91, 52);
+}
+
+.form-auth a, .form-container a {
+    text-decoration: none;
+    color: #007bff;
+}
+.profile-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info h3 {
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.profile-info p {
+    font-size: 20px;
+    margin: 30px 0;
+}
+
+.change-password-button {
+    background-color: orangered;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.change-password-button:hover {
+    background-color: rgb(172, 84, 52);
+}
