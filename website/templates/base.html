@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navigation.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cart-orders.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -27,6 +28,9 @@
             <ul>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
+                {% if current_user.id == 1 %}
+                <li><a href="/admin-page">Admin Page</a></li>
+                {% endif %}
             </ul>
         </div>
         <ul>
