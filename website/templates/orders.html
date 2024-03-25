@@ -4,52 +4,33 @@
 
 {% block content %}
 
-<div>
-    <div>
-        {% if orders %}
-        <h1>Orders</h1>
+    <div class="orders-container">
         <div>
+            {% if orders %}
+            <h1>Orders</h1>
             <div>
-                {% for item in orders %}
                 <div>
-                    <div><img src="{{ item.product.product_picture }}" alt=""></div>
-                    <div>
-                        <h3>{{ item.product.product_name }}</h3>
-                        <p>Quantity: {{ item.quantity }} </p>
-                        <p>Price: Ksh {{ item.price }}</p>
-                        <div>
-                            <p>Order Status: {{ item.status }}</p>
-                            {% if item.status == 'Pending' %}
-                            <div class="progress-container">
-                                <div class="progress-bar" style="width: 20%; background-color: #3498db;"></div>
+                    {% for item in orders %}
+                    <div class="order-item">
+                        <img src="{{ item.product.product_picture }}" alt="">
+                        <div class="order-item-details">
+                            <h3>{{ item.product.product_name }}</h3>
+                            <p>Quantity: {{ item.quantity }} </p>
+                            <p>Price: Ksh {{ item.price }}</p>
+                            <div>
+                                <p>Order Status: {{ item.status }}</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar {% if item.status == 'Pending' %}pending{% elif item.status == 'Accepted' %}accepted{% elif item.status == 'Out for delivery' %}out-for-delivery{% elif item.status == 'Delivered' %}delivered{% elif item.status == 'Canceled' %}canceled{% endif %}" style="width: {% if item.status == 'Pending' %}20{% elif item.status == 'Accepted' %}40{% elif item.status == 'Out for delivery' %}70{% elif item.status == 'Delivered' %}100{% elif item.status == 'Canceled' %}100{% endif %}%;"></div>
+                                </div>
                             </div>
-                            {% elif item.status == 'Accepted' %}
-                            <div class="progress-container">
-                                <div class="progress-bar" style="width: 40%; background-color: #17a2b8;"></div>
-                            </div>
-                            {% elif item.status == 'Out for delivery'  %}
-                            <div class="progress-container">
-                                <div class="progress-bar" style="width: 70%; background-color: #ffc107;"></div>
-                            </div>
-                            {% elif item.status == 'Delivered'  %}
-                            <div class="progress-container">
-                                <div class="progress-bar" style="width: 100%; background-color: #28a745;"></div>
-                            </div>
-                            {% elif item.status == 'Canceled'  %}
-                            <div class="progress-container">
-                                <div class="progress-bar" style="width: 100%; background-color: #dc3545;"></div>
-                            </div>
-                            {% endif %}
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
+            {% else %}
+            <h1>You have no Orders</h1>
+            {% endif %}
         </div>
-        {% else %}
-        <h1>You have no Orders</h1>
-        {% endif %}
     </div>
-</div>
-
 {% endblock %}

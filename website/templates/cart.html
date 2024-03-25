@@ -10,9 +10,9 @@
     <div class="shopping-cart">
         <h1>Shopping cart</h1>
         <div>
-            {% for item in cart %} 
+            {% for item in cart %}
             <div class="cart-item">
-                <img src="{{ item.product.product_picture }}" alt="" height="150px" width="150px" >
+                <img src="{{ item.product.product_picture }}" alt="" height="150px" width="150px">
                 <div>
                     <h3>{{ item.product.product_name }}</h3>
                     <div class="quantity-controls">
@@ -21,7 +21,7 @@
                         <span id="quantity">{{ item.quantity }}</span>
                         <a class="plus-cart" pid="{{ item.id }}"><i class="fas fa-plus-square fa-lg"></i></a>
                     </div>
-                    <div>
+                    <div class="remove">
                         <p><span><strong>$ {{ item.product.current_price }}</strong></span></p>
                         <a href="" class="remove-cart" pid="{{item.id}}">Remove</a>
                     </div>
@@ -31,23 +31,23 @@
             {% endfor %}
         </div>
     </div>
-    
+
     <div class="cart-summary">
         <h3>Cart Summary</h3>
         <hr>
         <ul>
             {% for item in cart %}
-            <li><strong>{{ item.product.product_name }}</strong><span id="amount">{{ item.product.current_price }} X <span id="quantity{{item.id}}">{{ item.quantity }}</span></span></li>
+            <li><strong style="margin-right: 15px;">{{ item.product.product_name }}</strong><span id="amount">{{ item.product.current_price }} X <span id="quantity{{item.id}}">{{ item.quantity }}</span></span></li>
             {% endfor %}
-            <li>Amount <span>$ <span id="amount_tt">{{ amount }}</span></span></li>
+            <li>Amount <span style="margin-right: 15px;">$ <span id="amount_tt">{{ amount }}</span></span></li>
             <li>
-                <div>
-                    <strong>Total</strong><small>(Including Shipping)</small>
+                <div style="margin-bottom: 12px;">
+                    <strong style="margin-right: 15px;">Total</strong><small>(Including Shipping)</small>
                 </div>
                 <span><strong>$ </strong><span id="totalamount"><strong>{{ total }}</strong></span></span>
             </li>
         </ul>
-        <div><a href="/place-order">Place Order</a></div>
+        <div><a href="/place-order" class="place-order-button">Place Order</a></div>
     </div>
 
     {% else %}
