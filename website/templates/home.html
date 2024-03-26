@@ -10,25 +10,26 @@
             <p style="font-size: 18px; font-family: Arial, Helvetica, sans-serif;">Elevate your space with our curated collection of exquisite furniture.
                 <br>Where comfort meets style, discover pieces that redefine your space.
             </p>
-            <Button style="padding: 10px 20px; margin-top: 10px; font-size: 18px;">Shop Now</Button>
+            <Button class="custom-button"><a style="text-decoration: none; color: inherit;" href="/all_products">Shop Now</a></Button>
+            <Button class="custom-button"><a style="text-decoration: none; color: inherit;" href="/sign-up">Join Today!</a></Button>
         </div>
         <div>
             <img src="static/images/coverimg.avif" alt="">
         </div>
     </div>
-    <h1 style="text-align: center;">OUR SERVICES</h1>
+    <h1 id="service" style="text-align: center;">OUR SERVICES</h1>
     <div class="services-container"> 
         <div class="service">
             <h2>MODERNIZE YOUR HOME</h2>
             <img src="static/images/homeservices.jpg">
             <p>Transform your home into a sanctuary of contemporary elegance with our exquisite collection of modern furniture. From sleek minimalist designs to bold statement pieces, our curated selection brings together form and function to create beautiful spaces.</p>
-            <button>Shop Now</button>
+            <Button class="custom-button"><a style="text-decoration: none; color: inherit;" href="/all_products">Shop Now</a></Button>
         </div> 
         <div class="service">
             <h2>OFFICE ESSENTIALS</h2>
             <img src="static/images/officeservice.jpg">
             <p>Upgrade your workspace with our high-quality office furniture designed for both style and function. Our collection, crafted with the modern professional in mind, blends awesome design with contemporary aesthetics to promote productivity and creativity.</p>
-            <button>Shop Now</button>
+            <Button class="custom-button"><a style="text-decoration: none; color: inherit;" href="/all_products">Shop Now</a></Button>
         </div>
     </div>
     <div class="homediv-container">
@@ -51,9 +52,9 @@
         {% endfor %}
     </div>
     <div class="shopmorediv">
-        <button class="shopmore">Shop More</button>
+        <button class="shopmore"><a style="text-decoration: none; color: inherit;" href="/all_products">Shop More ...</a></button>
     </div>
-    <div class="aboutcontainer">
+    <div id="aboutcontainer" class="aboutcontainer">
         <h1 style="text-align: center; margin-top: 10px;">About Us</h1>
         <div class="aboutclass">
             <div class="image-container">
@@ -64,16 +65,17 @@
                     Welcome to Sleek Furniture Store, where we specialize in transforming living and working spaces with our exceptional furniture solutions. With a focus on blending style and functionality, we curate furniture pieces that elevate your environment while reflecting your unique taste and lifestyle.
                     Founded on a passion for design and commitment to excellence, Sleek Furniture Store offers a diverse collection of furniture, from sleek and modern office furniture to elegant and comfortable home furnishings. Each piece is carefully selected to meet the highest standards of craftsmanship and style. Our dedication extends beyond offering great furniture – we provide exceptional service and support throughout your journey with us. Thank you for choosing Sleek Furniture Store as your partner in creating beautiful and functional spaces.
                 </p>
-                <button>Shop Now</button>
+                <Button class="custom-button"><a style="text-decoration: none; color: inherit;" href="/all_products">Shop Now</a></Button>
             </div> 
         </div>
     </div>
 
     <footer>
         <p style="font-size: 20px;"><strong>Sleek Furniture Store</strong></p>
-        <div>
-            <a href="https://twitter.com/MaryMutso"><i class="fa-brands fa-x-twitter"></i></a>
+        <div id="contact" class="contact">
+            <a href="mailto:marymutso2016@gmail.com"><i class="far fa-envelope"></i></a>
             <a href="https://github.com/Mutisomary"><i class="fa-brands fa-github"></i></a>
+            <a href="https://twitter.com/MaryMutso"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://www.linkedin.com/in/mary-mutiso-softwaredeveloper/"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
         <div>

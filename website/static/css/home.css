@@ -37,17 +37,32 @@
     font-size: 18px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-color: orangered;
+    transition: background-color 0.3s, color 0.3s;
+}
+.shopmore a {
+    text-decoration: none;
+    color: #000;
 }
 .service p {
     font-size: 17px;
 }
-.service button:hover,
-.homepage button:hover,
-.text-container button:hover, 
-.shopmore:hover {
-    background-color: orangered;
-    color: white; 
-}
+
+.custom-button,
+.shopmore {
+    margin-top: 10px;
+    font-size: 18px;
+    margin-left: 10px;
+    background-color: transparent;
+    color: #000; 
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .custom-button:hover,
+  .shopmore:hover {
+    background-color: orangered; 
+    color: #fff; 
+  }
+  
 
 .aboutclass {
     display: flex;
@@ -79,7 +94,6 @@
 }
 
 .homediv-container {
-    background-color: #fff;
     display: flex; 
     flex-wrap: wrap;
     gap: 20px;
@@ -90,7 +104,7 @@
     margin-left: 10px;
     padding: 10px;
     align-items: center;
-    border: 1px solid orangered;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .product {
