@@ -23,28 +23,32 @@
 </head>
 <body>
     <nav>
-        <a class="logo">Sleek Furniture Store</a>
-        <div>
-            <ul>
-                <li><a href="/all_products">Shop</a></li>
-                <li><a href="/#service">Services</a></li>
-                <li><a href="/#aboutcontainer">About</a></li>
-                <li><a href="/#contact">Contact</a></li>
-            </ul>
-        </div>
+        <a class="logo" href="/">
+            <i class="fa-solid fa-house"></i>
+            Sleek Furniture Store</a>
+        
+        <ul class="navbar">
+            <li><a href="/all_products">Shop</a></li>
+            <li><a href="/#service">Services</a></li>
+            <li><a href="/#aboutcontainer">About</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    
         <ul>
             {% if current_user.id == 1 %}
                 <li><a href="/admin-page">Admin Page</a></li>
             {% endif %}
             <li>
-                {% if cart | length < 1 %}
-                <a href="/cart">cart
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
-                {% else %}
-                <a href="/cart">cart
-                    <i class="bi bi-{{ cart | length }}-square-fill"></i>
-                </a>
+                {% if current_user.is_authenticated %}
+                    {% if cart | length < 1 %}
+                    <a href="/cart">cart
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    {% else %}
+                    <a href="/cart">cart
+                        <i class="bi bi-{{ cart | length }}-square-fill"></i>
+                    </a>
+                    {% endif %}
                 {% endif %}
             </li>
             <li>
@@ -56,14 +60,19 @@
                     <li><a class="dropdown-item" href="/profile/{{ current_user.id }}">Profile <i class="fa-solid fa-user"></i></a></li>
                     <li><a class="dropdown-item" href="/orders">Orders <i class="fa-solid fa-truck-fast"></i></a></li>
                     <li><a class="dropdown-item" href="/logout">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
-      
+    
                     {% else %}
-                    
                     <li><a class="dropdown-item" href="/login">Login <i class="fa-solid fa-right-to-bracket"></i></a></li>
                     <li><a class="dropdown-item" href="/sign-up">Sign Up <i class="fa-solid fa-right-to-bracket"></i></a></li>
-      
+                    
                     {% endif %}
-       
+                </ul>
+            </li>
+            <label for="check">
+                <i class="fas fa-bars" id="menu-icon"></i>
+            </label>
+        </ul>
+              
     </nav>
     {% for message in get_flashed_messages() %}
     <div class="alert alert-success alert-dismissible fade show custom-alert" role="alert">

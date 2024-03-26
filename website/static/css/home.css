@@ -1,5 +1,5 @@
 .homepage {
-    background-color: #f0f0f0;
+    background-color: #ede4e4;
     height: 90vh;
     width: 100%;
     display: flex;
@@ -12,18 +12,27 @@
 .services-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Adjust alignment as needed */
-    margin: 0 auto; /* Center the container */
-    max-width: 1200px; /* Set maximum width */
+    align-items: flex-start;
+    margin: 0 auto; 
+    max-width: 1200px;
     flex-wrap: wrap;
 }
-
 .service {
     width: calc(50% - 20px); /* Adjust width based on desired spacing */
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
     border: 1px solid orangered;
+}
+@media only screen and (max-width: 786px) {
+    .services-container {
+        flex-direction: column; /* Change to a column layout for small devices */
+        align-items: center; /* Align items to the center */
+    }
+    .service {
+        width: 100%; /* Make each service div take full width */
+        margin-bottom: 20px; /* Add margin between service divs */
+    }
 }
 
 .service img {
@@ -74,6 +83,19 @@
     flex-wrap: wrap;
 }
 
+@media only screen and (max-width: 786px) {
+    .aboutclass {
+        flex-direction: column; /* Change to a column layout for small devices */
+        margin: 0 auto; /* Center the content horizontally */
+        padding: 0 20px; /* Add padding to the sides */
+    }
+    .text-container {
+        margin-top: 20px; /* Add space between image and text */
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+}
 .image-container {
     width: 700px; /* Set width of image container */
     height: 300px; /* Set height of image container */

@@ -29,3 +29,16 @@
 .table tbody tr td a:hover {
     text-decoration: underline;
 }
+
+.custom-button1 {
+    padding: 10px 20px;
+    font-size: 17px;
+    background-color: transparent;
+    color: #000;
+    border: 1px solid orangered;
+    transition: background-color 0.3s, color 0.3s;
+}
+.custom-button1:hover {
+    color: #fff;
+    background-color: orangered;
+}

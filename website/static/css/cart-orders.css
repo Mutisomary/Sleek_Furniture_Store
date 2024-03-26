@@ -92,6 +92,16 @@
     background-color: rgb(196, 100, 65);
 }
 
+@media only screen and (max-width: 786px) {
+    .cart-container {
+        flex-direction: column;
+    }
+    .shopping-cart {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
 h1 {
     text-align: center;
     margin-top: 20px;

@@ -13,6 +13,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: orangered;
+    margin-bottom: 0;
 }
 
 nav .logo {
@@ -20,57 +21,27 @@ nav .logo {
     font-weight: 700;
     letter-spacing: 1px;
     color: navy;
+    text-decoration: none;
 }
 nav a b {
     color: red;
 }
-nav div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav div ul {
-    list-style: none;
-    display: flex;
-    margin-right: 5px;
-}
-nav div ul li {
-    margin: 5px;
-}
-nav div ul li a {
-    font-size: 17px;
-    text-decoration: none;
-    color: navy;
-}
-nav div form input {
-    border: none;
-    outline: none;
-    background-color: #fff;
-    height: 100%;
-    width: 200px;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    padding: 5px;
-}
-.btn {
-    background-color:orange;
-    color: #fff;
-    padding: 8px 10px;
-    border: none;
-    cursor: pointer;
-    height: 100%;
-}
-
 nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
     list-style: none;
+    display: flex;
+    margin-right: 5px;
+}
+
+nav ul li {
+    margin: 10px;
 }
 nav ul li a {
+    font-size: 17px;
     text-decoration: none;
-    margin: 8px;
+    color: navy;
 }
 
 nav ul ul {
@@ -115,6 +86,43 @@ li:hover > ul {
 .dropdown-menu li:hover {
     background-color: #f0f0f0;
 }
+ #menu-icon {
+    font-size: 35px;
+    color: navy;
+    cursor: pointer;
+    z-index: 1001;
+    display: none;
+ }
+
+
+ @media only screen and (max-width: 786px) {
+    .logo {
+        display: block;
+        font-size: 10px;
+    }
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 29vh;
+        background-color: orangered;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: all .50s ease;
+    }
+    .navbar a {
+        display: block;
+        margin: 12px 0;
+        padding: 0px 25px;
+        transition: all .50s ease;
+    }
+ }
+
 
 /* Footer styles */
 footer {

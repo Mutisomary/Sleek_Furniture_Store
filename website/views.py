@@ -115,8 +115,13 @@ def minus_cart():
     if request.method == 'GET':
         cart_id = request.args.get('cart_id')
         cart_item = Cart.query.get(cart_id)
-        cart_item.quantity = cart_item.quantity - 1
-        db.session.commit()
+        
+        if cart_item.quantity > 1:
+            cart_item.quantity -= 1
+            db.session.commit()
+        else:
+            db.session.delete(cart_item)
+            db.session.commit()
 
         cart = Cart.query.filter_by(customer_link=current_user.id).all()
 
@@ -126,13 +131,12 @@ def minus_cart():
             amount += item.product.current_price * item.quantity
 
         data = {
-            'quantity': cart_item.quantity,
+            'quantity': cart_item.quantity if cart_item.quantity > 0 else 0,
             'amount': amount,
             'total': amount + 1000
         }
 
         return jsonify(data)
-
 @views.route('removecart')
 @login_required
 def remove_cart():
@@ -152,7 +156,7 @@ def remove_cart():
         data = {
             'quantity': cart_item.quantity,
             'amount': amount,
-            'total': amount + 15
+            'total': amount + 1000
         }
 
         return jsonify(data)
@@ -169,7 +173,7 @@ def place_order():
 
             service = APIService(token=API_TOKEN, publishable_key=API_PUBLISHABLE_KEY, test=True)
             create_order_response = service.collect.mpesa_stk_push(phone_number='254792566007', email=current_user.email,
-                                                                   amount=total + 15, narrative='Purchase of goods')
+                                                                   amount=total + 1000, narrative='Purchase of goods')
 
             for item in customer_cart:
                 new_order = Order()
