@@ -3,6 +3,7 @@ from flask_login import UserMixin
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 
+
 class Customer(db.Model, UserMixin):
     """"The customer class"""
     id = db.Column(db.Integer, primary_key=True)
