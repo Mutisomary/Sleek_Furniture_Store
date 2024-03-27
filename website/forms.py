@@ -5,7 +5,6 @@ from .models import Customer
 from flask_wtf.file import FileField, FileRequired
 
 
-
 class SignUpForm(FlaskForm):
     username =  StringField('Username', validators=[DataRequired(), length(min=3)])
     email = EmailField('Email', validators=[DataRequired()])
