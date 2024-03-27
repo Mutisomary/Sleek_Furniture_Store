@@ -1,9 +1,11 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_migrate import Migrate
 
 
 db = SQLAlchemy()
+migrate = Migrate(db)
 DB_NAME = 'database.sqlite3'
 
 def create_database():
@@ -14,6 +16,8 @@ def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'Marymutiso' #For encrypting session data for auth etc.
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+
+    migrate = Migrate(app, db)
 
     db.init_app(app)
 
