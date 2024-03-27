@@ -1,3 +1,4 @@
+/* Homepage CSS */
 .homepage {
     background-color: #ede4e4;
     height: 90vh;
@@ -18,7 +19,7 @@
     flex-wrap: wrap;
 }
 .service {
-    width: calc(50% - 20px); /* Adjust width based on desired spacing */
+    width: calc(50% - 20px);
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
@@ -26,20 +27,20 @@
 }
 @media only screen and (max-width: 786px) {
     .services-container {
-        flex-direction: column; /* Change to a column layout for small devices */
-        align-items: center; /* Align items to the center */
+        flex-direction: column;
+        align-items: center; 
     }
     .service {
-        width: 100%; /* Make each service div take full width */
-        margin-bottom: 20px; /* Add margin between service divs */
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
 
 .service img {
     max-width: 100%;
     width: 700px;
-    height: 300px; /* Set a fixed height for the images */
-    object-fit: cover; /* Ensure images maintain aspect ratio */
+    height: 300px;
+    object-fit: cover;
 }
 .service button, .homepage button, .text-container button, .shopmore {
     padding: 12px 25px;
@@ -85,31 +86,31 @@
 
 @media only screen and (max-width: 786px) {
     .aboutclass {
-        flex-direction: column; /* Change to a column layout for small devices */
-        margin: 0 auto; /* Center the content horizontally */
-        padding: 0 20px; /* Add padding to the sides */
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 0 20px;
     }
     .text-container {
-        margin-top: 20px; /* Add space between image and text */
+        margin-top: 20px;
         text-align: center;
         margin-bottom: 10px;
     }
     
 }
 .image-container {
-    width: 700px; /* Set width of image container */
-    height: 300px; /* Set height of image container */
+    width: 700px;
+    height: 300px;
 }
 
 .image-container img {
-    width: 650px; /* Make image fill its container */
-    height: 300px; /* Make image fill its container */
-    object-fit: cover; /* Maintain aspect ratio without stretching */
+    width: 650px;
+    height: 300px;
+    object-fit: cover;
 }
 
 .text-container {
-    flex: 1; /* Let text container take remaining space */
-    margin-left: 20px; /* Add space between image and text */
+    flex: 1;
+    margin-left: 20px;
 }
 .text-container p {
     font-size: 17px;
@@ -131,7 +132,7 @@
 
 .product {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
     width: 300px;
     align-items: center;
 }
