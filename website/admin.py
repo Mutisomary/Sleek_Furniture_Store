@@ -175,6 +175,7 @@ def display_customers():
         return render_template('customers.html', customers=customers)
     return render_template('404.html')
 
+
 @admin.route('/admin-page')
 @login_required
 def admin_page():
