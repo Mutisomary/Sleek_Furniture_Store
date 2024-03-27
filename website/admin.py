@@ -61,6 +61,7 @@ def shop_items():
         return render_template('shop_items.html', items=items)
     return render_template('404.html')
 
+
 @admin.route('/update-item/<int:item_id>', methods=['GET', 'POST'])
 @login_required
 def update_item(item_id):
