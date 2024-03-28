@@ -23,6 +23,7 @@ def home():
  
 
 @views.route('/all_products')
+@login_required
 def products():
     page = request.args.get('page', 1, type=int)
     per_page = 8
@@ -51,7 +52,7 @@ def add_to_cart(item_id):
             item_exists.quantity = item_exists.quantity + 1
             db.session.commit()
             flash(f'Quantity of the {item_exists.product.product_name} has been updated')
-            return redirect('/')
+            return redirect(request.referrer)
         except Exception as e:
             print(e)
             flash(f'Quantity of {item_exists.product.product_name} not updated')
@@ -222,4 +223,4 @@ def search():
         return render_template('search.html', items=items, cart=Cart.query.filter_by(customer_link=current_user.id).all()
                            if current_user.is_authenticated else [])
 
-    return render_template('search.html')
+    return redirect('all_products')

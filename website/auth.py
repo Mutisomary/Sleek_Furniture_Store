@@ -50,7 +50,7 @@ def login():
         if customer:
             if customer.verify_password(password=password):
                 login_user(customer)
-                return redirect('/')
+                return redirect('/all_products')
             else:
                 flash('Incorrect Password or Email')
         else:
