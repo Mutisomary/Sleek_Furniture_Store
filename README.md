@@ -20,6 +20,9 @@ Sleek Furniture Store is an online platform dedicated to offering a curated coll
 - **Responsive Design**: The website is optimized for various devices, providing a consistent experience across desktop, tablet, and mobile.
 - **Search Functionality**: Easily search for specific furniture items using our search bar.
 
+## Access our website
+http://mutisomary.pythonanywhere.com/
+
 ## Installation
 To run Sleek Furniture Store locally, follow these steps:
 1. Clone this repository:
