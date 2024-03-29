@@ -30,6 +30,7 @@ class Customer(db.Model, UserMixin):
         return '<Customer %r>' % Customer.id
     
 class Product(db.Model):
+    """Product class"""
     id = db.Column(db.Integer, primary_key=True)
     product_name = db.Column(db.String(100), nullable=False)
     current_price = db.Column(db.Float, nullable=False)
@@ -48,6 +49,7 @@ class Product(db.Model):
     
 
 class Cart(db.Model):
+    """cart class"""
     id = db.Column(db.Integer, primary_key=True)
     quantity = db.Column(db.Integer, nullable=False)
 
@@ -58,6 +60,7 @@ class Cart(db.Model):
         return '<Cart %r>' % self.id
     
 class Order(db.Model):
+    """Order class"""
     id = db.Column(db.Integer, primary_key=True)
     quantity = db.Column(db.Integer, nullable=False)
     price = db.Column(db.Float, nullable=False)
