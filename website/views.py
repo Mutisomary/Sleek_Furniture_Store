@@ -6,7 +6,7 @@ from . import db
 from intasend import APIService
 
 
-# views.py contains routes
+# views.py contains routes for the customers to view
 views = Blueprint('views', __name__)
 
 API_PUBLISHABLE_KEY = 'ISPubKey_test_c133d697-3e02-46ce-b56c-31a45d9d74cf'
