@@ -15,6 +15,7 @@ nav {
     align-items: center;
     background-color: orangered;
     margin-bottom: 0;
+    position: relative;
 }
 
 nav .logo {
@@ -88,10 +89,17 @@ li:hover > ul {
     background-color: #f0f0f0;
 }
  #menu-icon {
+    position: absolute;
+    top: 28px;
+    right: 5px;
     font-size: 35px;
     color: navy;
     cursor: pointer;
     z-index: 1001;
+    display: none;
+    margin-left: 10px;
+ }
+ #icon {
     display: none;
  }
 
@@ -101,16 +109,19 @@ li:hover > ul {
         display: block;
         font-size: 10px;
     }
+    .navbar2 {
+        margin-right: 20px;
+    }
     #menu-icon {
         display: block;
     }
     .navbar {
         position: absolute;
-        top: 100%;
+        top: 70px;
         right: -100%;
         width: 270px;
-        height: 29vh;
-        background-color: orangered;
+        height: 32vh;
+        background-color: #eaeaea;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -121,6 +132,9 @@ li:hover > ul {
         margin: 12px 0;
         padding: 0px 25px;
         transition: all .50s ease;
+    }
+    #icon:checked ~ .navbar {
+        right: 0; 
     }
  }
 
