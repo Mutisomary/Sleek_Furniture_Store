@@ -98,14 +98,15 @@
     
 }
 .image-container {
+    max-width: 100%;
     width: 700px;
     height: 300px;
 }
 
 .image-container img {
-    width: 650px;
+    max-width: 100%;
+    width: 700px;
     height: 300px;
-    object-fit: cover;
 }
 
 .text-container {
