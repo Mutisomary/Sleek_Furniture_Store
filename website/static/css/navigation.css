@@ -115,7 +115,7 @@ li:hover > ul {
     .navbar {
         position: absolute;
         top: 70px;
-        right: -100%;
+        right: 0;
         width: 270px;
         height: 32vh;
         background-color: #eaeaea;
@@ -123,6 +123,8 @@ li:hover > ul {
         flex-direction: column;
         justify-content: flex-start;
         transition: all .50s ease;
+        overflow: hidden;
+        z-index: -100;
     }
     .navbar a {
         display: block;
@@ -131,7 +133,8 @@ li:hover > ul {
         transition: all .50s ease;
     }
     #icon:checked ~ .navbar {
-        right: 0; 
+        overflow: visible;
+        z-index: 100;
     }
  }
 
