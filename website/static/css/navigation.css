@@ -81,10 +81,6 @@ li:hover > ul {
     display: block;
 }
 
-.dropdown-menu li:hover {
-    display: none;
-}
-
  #menu-icon {
     position: absolute;
     top: 28px;
@@ -103,8 +99,15 @@ li:hover > ul {
 
  @media only screen and (max-width: 786px) {
     .logo {
+        transform: scale(0.8);
         display: block;
-        font-size: 10px;
+        font-size: 5px;
+        letter-spacing: 0;
+        left: 0;
+        margin-right: 1px;
+    }
+    .fa-house {
+        display: none;
     }
     .navbar2 {
         margin-right: 20px;
