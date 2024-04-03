@@ -19,15 +19,15 @@ nav {
 }
 
 nav .logo {
+    position: absolute;
+    left: 3px;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 1px;
     color: navy;
     text-decoration: none;
 }
-nav a b {
-    color: red;
-}
+
 nav ul {
     display: flex;
     justify-content: space-between;
@@ -60,10 +60,6 @@ li:hover > ul {
     display: block;
 }
 
-.nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
 .dropdown-menu {
     display: none;
     margin-top: 0;
@@ -86,8 +82,9 @@ li:hover > ul {
 }
 
 .dropdown-menu li:hover {
-    background-color: #f0f0f0;
+    display: none;
 }
+
  #menu-icon {
     position: absolute;
     top: 28px;
